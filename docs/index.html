@@ -8,11 +8,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --primary:#0d6efd;
+  --dark:#0f172a;
+  --light:#f8fafc;
+  --accent:#22c55e;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Inter', sans-serif;
+}
+
 body{
-  font-family:'Inter',sans-serif;
-  background:#0f172a;
-  color:#e2e8f0;
+  background:var(--light);
+  color:#333;
   line-height:1.6;
 }
 
@@ -21,294 +33,262 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:20px 40px;
-  background:#020617;
+  padding:20px 10%;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
   position:sticky;
   top:0;
   z-index:1000;
 }
-nav h2{color:#fff}
-nav .links a{
-  margin:0 15px;
-  text-decoration:none;
-  color:#cbd5f5;
+
+nav h1{
+  font-size:1.5rem;
 }
+
+nav a{
+  margin:0 10px;
+  text-decoration:none;
+  color:#333;
+  font-weight:500;
+}
+
 .btn{
-  background:#6366f1;
+  background:var(--primary);
+  color:white;
   padding:10px 18px;
   border-radius:8px;
-  color:white;
   text-decoration:none;
-  display:inline-block;
   transition:.3s;
 }
-.btn:hover{background:#4f46e5}
+
+.btn:hover{
+  opacity:.85;
+}
 
 /* HERO */
 .hero{
   height:90vh;
-  background:url("https://images.pexels.com/photos/27099094/pexels-photo-27099094.jpeg") center/cover;
+  background:url("https://images.pexels.com/photos/27099094/pexels-photo-27099094.jpeg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
+  color:white;
   position:relative;
 }
+
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
   background:rgba(0,0,0,0.6);
 }
+
 .hero-content{
   position:relative;
-  max-width:800px;
+  max-width:700px;
 }
+
 .hero h1{
-  font-size:3rem;
+  font-size:2.5rem;
   margin-bottom:20px;
 }
-.hero p{margin-bottom:30px}
 
-/* SECCIONS */
-section{padding:80px 40px;text-align:center}
-h2{margin-bottom:20px}
+.hero p{
+  margin-bottom:25px;
+}
 
-/* GRID */
+/* SECTIONS */
+section{
+  padding:80px 10%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:2rem;
+}
+
+/* SERVICES */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
-  margin-top:40px;
+  gap:20px;
 }
 
 .card{
-  background:#1e293b;
+  background:white;
   padding:25px;
   border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.05);
   transition:.3s;
 }
+
 .card:hover{
   transform:translateY(-5px);
 }
 
-/* FEATURES */
-.features{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
-}
-.feature{
-  width:300px;
-}
-
-/* PROCESS */
-.process{
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-}
-.step{
-  max-width:250px;
-}
-
 /* STATS */
 .stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:20px;
-}
-.stat{
-  background:#1e293b;
-  padding:20px;
-  border-radius:10px;
-  font-size:1.5rem;
+  background:var(--dark);
+  color:white;
 }
 
-/* TESTIMONIALS */
-.testimonial{
-  background:#1e293b;
-  padding:20px;
-  border-radius:10px;
+.stats .grid{
+  text-align:center;
+}
+
+.stat{
+  font-size:2rem;
+  font-weight:700;
 }
 
 /* CTA */
 .cta{
-  background:#6366f1;
-  padding:60px 20px;
+  background:var(--primary);
+  color:white;
+  text-align:center;
+  padding:60px 10%;
 }
 
 /* CONTACT */
 form{
-  max-width:400px;
-  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:15px;
 }
-input,button{
-  width:100%;
+
+input{
   padding:12px;
-  margin:10px 0;
-  border:none;
   border-radius:6px;
-}
-button{
-  background:#6366f1;
-  color:white;
+  border:1px solid #ccc;
 }
 
 /* FOOTER */
 footer{
-  background:#020617;
-  padding:30px;
+  background:#111;
+  color:#aaa;
+  padding:40px 10%;
   text-align:center;
 }
 
-/* ANIMACIÓ */
-.fade{
-  opacity:0;
-  transform:translateY(20px);
-  transition:all .6s ease;
-}
-.fade.show{
-  opacity:1;
-  transform:translateY(0);
+footer a{
+  color:#ccc;
+  text-decoration:none;
 }
 </style>
+
 </head>
 
 <body>
 
 <!-- NAV -->
 <nav>
-  <h2>FoodLogistic S.A.</h2>
-  <div class="links">
+  <h1>FoodLogistic S.A.</h1>
+  <div>
     <a href="#services">Serveis</a>
-    <a href="#why">Per què</a>
+    <a href="#about">Qui Som</a>
     <a href="#contact">Contacte</a>
-    <a href="#contact" class="btn">Pressupost</a>
+    <a class="btn" href="#contact">Pressupost</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<div class="hero">
-  <div class="hero-content fade">
-    <h1>Excel·lència en Logística Alimentària</h1>
-    <p>Transport refrigerat, magatzem i distribució nacional</p>
+<section class="hero">
+  <div class="hero-content">
+    <h1>Excel·lència en Logística Alimentària B2B</h1>
+    <p>Solucions especialitzades de transport refrigerat, magatzem i distribució nacional adaptades a la indústria alimentària.</p>
     <a href="#contact" class="btn">Sol·licita Pressupost</a>
   </div>
-</div>
+</section>
 
-<!-- SERVEIS -->
+<!-- SERVICES -->
 <section id="services">
-  <h2>Els Nostres Serveis</h2>
+  <h2 class="section-title">Els Nostres Serveis Especialitzats</h2>
   <div class="grid">
-    <div class="card fade">
+    <div class="card">
       <h3>Transport Refrigerat</h3>
-      <p>Control total de temperatura i traçabilitat.</p>
+      <p>Flota multi-temperatura que garanteix que els vostres productes es mantinguin frescos.</p>
     </div>
-    <div class="card fade">
+
+    <div class="card">
       <h3>Magatzem</h3>
-      <p>Instal·lacions modernes i segures.</p>
+      <p>Instal·lacions d'emmagatzematge en fred d'última generació.</p>
     </div>
-    <div class="card fade">
-      <h3>Preparació</h3>
-      <p>Gestió eficient de comandes.</p>
+
+    <div class="card">
+      <h3>Preparació de Comandes</h3>
+      <p>Gestió d'inventari precisa i processos eficients.</p>
     </div>
-    <div class="card fade">
-      <h3>Distribució</h3>
-      <p>Lliurament nacional optimitzat.</p>
+
+    <div class="card">
+      <h3>Distribució Nacional</h3>
+      <p>Lliuraments puntuals a tot el país.</p>
     </div>
   </div>
 </section>
 
 <!-- WHY -->
-<section id="why">
-  <h2>Per Què Triar-nos</h2>
-  <div class="features">
-    <div class="feature fade">
-      <h3>Fiabilitat</h3>
-      <p>99.8% lliuraments puntuals</p>
+<section>
+  <h2 class="section-title">Per Què Triar FoodLogistic</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Reliability</h3>
+      <p>99,8% de lliuraments puntuals.</p>
     </div>
-    <div class="feature fade">
+    <div class="card">
       <h3>Traçabilitat</h3>
-      <p>Seguiment en temps real</p>
+      <p>Monitoratge en temps real.</p>
     </div>
-    <div class="feature fade">
-      <h3>Seguretat</h3>
-      <p>Protocols alimentaris estrictes</p>
+    <div class="card">
+      <h3>Seguretat Alimentària</h3>
+      <p>Protocols APPCC estrictes.</p>
     </div>
   </div>
 </section>
 
 <!-- PROCESS -->
 <section>
-  <h2>El Nostre Procés</h2>
-  <div class="process">
-    <div class="step fade">
-      <h3>1. Planificació</h3>
-    </div>
-    <div class="step fade">
-      <h3>2. Transport</h3>
-    </div>
-    <div class="step fade">
-      <h3>3. Entrega</h3>
-    </div>
+  <h2 class="section-title">El Nostre Procés</h2>
+  <div class="grid">
+    <div class="card"><h3>01 Reserva</h3></div>
+    <div class="card"><h3>02 Transport</h3></div>
+    <div class="card"><h3>03 Lliurament</h3></div>
   </div>
 </section>
 
 <!-- STATS -->
-<section>
-  <div class="stats">
-    <div class="stat fade">150+ Vehicles</div>
-    <div class="stat fade">25k Enviaments</div>
-    <div class="stat fade">99.8% Puntualitat</div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section>
-  <h2>Clients</h2>
+<section class="stats">
   <div class="grid">
-    <div class="testimonial fade">"Servei excel·lent"</div>
-    <div class="testimonial fade">"Molt fiables"</div>
-    <div class="testimonial fade">"Gran equip"</div>
+    <div><div class="stat">150+</div><p>Flota</p></div>
+    <div><div class="stat">25k+</div><p>Enviaments</p></div>
+    <div><div class="stat">12k m²</div><p>Magatzem</p></div>
+    <div><div class="stat">99.8%</div><p>Puntualitat</p></div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Preparat per millorar la teva logística?</h2>
-  <a href="#contact" class="btn">Contacta ara</a>
+  <h2>Preparat per Optimitzar la Teva Cadena?</h2>
+  <p>Uneix-te a centenars de socis B2B.</p>
+  <a href="#contact" class="btn">Sol·licita Pressupost</a>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2>Contacte</h2>
+  <h2 class="section-title">Contacta amb Nosaltres</h2>
   <form>
-    <input type="text" placeholder="Nom" required>
+    <input type="text" placeholder="Nom Complet" required>
     <input type="email" placeholder="Email" required>
-    <button>Enviar</button>
+    <button class="btn">Començar</button>
   </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <p>© 2026 FoodLogistic S.A.</p>
+  <p>info@foodlogistic.sa | +34 912 345 678</p>
 </footer>
-
-<script>
-/* ANIMACIÓ SCROLL */
-const elements=document.querySelectorAll('.fade');
-const observer=new IntersectionObserver(entries=>{
-  entries.forEach(entry=>{
-    if(entry.isIntersecting){
-      entry.target.classList.add('show');
-    }
-  });
-});
-elements.forEach(el=>observer.observe(el));
-</script>
 
 </body>
 </html>
