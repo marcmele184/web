@@ -18,7 +18,7 @@ Per a la realització d’aquesta activitat s’ha creat una web corporativa amb
 També s’ha afegit una petita secció informativa de caràcter legal i s’ha configurat la publicació del lloc web amb **GitHub Pages** a partir de la carpeta `docs` del repositori.
 
 ### Repositori públic de la web
-[REPO](https://github.com/Nitroxi/foodlogistic-web)
+[REPO](https://github.com/marcmele184/web)
 
 ### URL pública de la pàgina
 [Web](https://nitroxi.github.io/foodlogistic-web/)
