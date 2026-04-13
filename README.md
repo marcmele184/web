@@ -21,7 +21,7 @@ També s’ha afegit una petita secció informativa de caràcter legal i s’ha 
 [REPO](https://github.com/marcmele184/web)
 
 ### URL pública de la pàgina
-[Web](https://nitroxi.github.io/foodlogistic-web/)
+[Web](https://marcmele184.github.io/web/)
 
 ## Tecnologies i recursos utilitzats
 
