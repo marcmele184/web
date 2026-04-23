@@ -299,9 +299,25 @@ footer{
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="section-title">Contacte</h2>
-  <form>
-    <input type="text" placeholder="Nom" required>
+    <form>
+    <input type="text" placeholder="Nom complet" required>
     <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Telèfon" required>
+    <textarea placeholder="Missatge" required style="padding:12px;border-radius:6px;border:1px solid #ccc;"></textarea>
+
+    <!-- CONSENTIMENT DADES -->
+    <label style="font-size:0.9rem;">
+      <input type="checkbox" required>
+      Accepto la <a href="privacitat.html" target="_blank">Política de Privacitat</a>
+    </label>
+
+    <!-- COMUNICACIONS -->
+    <label style="font-size:0.9rem;">
+      <input type="checkbox">
+      Accepto rebre comunicacions comercials segons l’
+      <a href="avis-legal.html" target="_blank">Avís Legal</a>
+    </label>
+
     <button class="btn">Enviar</button>
   </form>
 </section>
@@ -310,7 +326,11 @@ footer{
 <footer>
   <p>© 2026 FoodLogístic S.A.</p>
   <p>info@foodlogistic.sa | +34 912 345 678</p>
-  <p>Política de privacitat | Avís legal | Cookies</p>
+  <p>
+  <a href="avis-legal.html">Avís legal</a> |
+  <a href="privacitat.html">Política de privacitat</a> |
+  <a href="cookies.html">Política de cookies</a>
+</p>
 </footer>
 
 <!-- Default Statcounter code for FoodLogistic
@@ -327,6 +347,44 @@ href="https://statcounter.com/" target="_blank"><img class="statcounter"
 src="https://c.statcounter.com/13221914/0/81c5e875/1/" alt="Web Analytics"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
- 
+
+<div id="cookie-banner" style="
+position:fixed;
+bottom:0;
+width:100%;
+background:#111;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:9999;
+">
+  <p style="font-size:0.9rem;">
+    Utilitzem cookies per millorar l'experiència. Consulta la
+    <a href="cookies.html" style="color:#0d6efd;">política de cookies</a>.
+  </p>
+  <div>
+    <button onclick="acceptCookies()" class="btn">Acceptar</button>
+    <button onclick="rejectCookies()" style="margin-left:10px;">Rebutjar</button>
+  </div>
+</div>
+
+<script>
+function acceptCookies(){
+  localStorage.setItem("cookies","accepted");
+  document.getElementById("cookie-banner").style.display="none";
+}
+
+function rejectCookies(){
+  localStorage.setItem("cookies","rejected");
+  document.getElementById("cookie-banner").style.display="none";
+}
+
+if(localStorage.getItem("cookies")){
+  document.getElementById("cookie-banner").style.display="none";
+}
+</script>
+
 </body>
 </html>
