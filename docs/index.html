@@ -348,41 +348,127 @@ src="https://c.statcounter.com/13221914/0/81c5e875/1/" alt="Web Analytics"
 referrerPolicy="no-referrer-when-downgrade"></a></div></noscript>
 <!-- End of Statcounter Code -->
 
+<!-- COOKIE BANNER PRO -->
 <div id="cookie-banner" style="
 position:fixed;
 bottom:0;
 width:100%;
 background:#111;
 color:white;
-padding:15px;
+padding:20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 z-index:9999;
+flex-wrap:wrap;
+gap:10px;
 ">
-  <p style="font-size:0.9rem;">
-    Utilitzem cookies per millorar l'experiència. Consulta la
-    <a href="cookies.html" style="color:#0d6efd;">política de cookies</a>.
+
+  <p style="font-size:0.9rem; max-width:600px;">
+    Utilitzem cookies pròpies i de tercers (com Statcounter) per analitzar el trànsit i millorar el servei.
+    Pots acceptar-les, rebutjar-les o configurar-les.
+    <a href="cookies.html" style="color:#0d6efd;">Més informació</a>
   </p>
+
   <div>
-    <button onclick="acceptCookies()" class="btn">Acceptar</button>
-    <button onclick="rejectCookies()" style="margin-left:10px;">Rebutjar</button>
+    <button onclick="acceptAllCookies()" class="btn">Acceptar</button>
+    <button onclick="rejectAllCookies()" style="margin-left:10px;">Rebutjar</button>
+    <button onclick="openConfig()" style="margin-left:10px;">Configurar</button>
   </div>
 </div>
 
+<!-- PANEL CONFIGURACIÓ -->
+<div id="cookie-config" style="
+display:none;
+position:fixed;
+bottom:0;
+width:100%;
+background:white;
+color:#333;
+padding:20px;
+z-index:10000;
+box-shadow:0 -5px 20px rgba(0,0,0,0.2);
+">
+
+  <h3>Configuració de cookies</h3>
+
+  <label>
+    <input type="checkbox" checked disabled>
+    Cookies tècniques (necessàries)
+  </label><br><br>
+
+  <label>
+    <input type="checkbox" id="analyticsCookies">
+    Cookies analítiques (Statcounter)
+  </label><br><br>
+
+  <button onclick="savePreferences()" class="btn">Guardar preferències</button>
+</div>
+
+<!-- STATCOUNTER BLOQUEJAT -->
+<script type="text/plain" id="statcounter-script">
+var sc_project=13221914; 
+var sc_invisible=1; 
+var sc_security="81c5e875"; 
+</script>
+
+<script type="text/plain" id="statcounter-load">
+(function(){
+  var s=document.createElement("script");
+  s.src="https://www.statcounter.com/counter/counter.js";
+  s.async=true;
+  document.body.appendChild(s);
+})();
+</script>
+
 <script>
-function acceptCookies(){
-  localStorage.setItem("cookies","accepted");
+function loadStatcounter(){
+  const script1 = document.getElementById("statcounter-script");
+  const script2 = document.getElementById("statcounter-load");
+
+  eval(script1.textContent);
+  eval(script2.textContent);
+}
+
+// ACCIONS
+function acceptAllCookies(){
+  localStorage.setItem("cookies","all");
+  document.getElementById("cookie-banner").style.display="none";
+  loadStatcounter();
+}
+
+function rejectAllCookies(){
+  localStorage.setItem("cookies","none");
   document.getElementById("cookie-banner").style.display="none";
 }
 
-function rejectCookies(){
-  localStorage.setItem("cookies","rejected");
-  document.getElementById("cookie-banner").style.display="none";
+function openConfig(){
+  document.getElementById("cookie-config").style.display="block";
 }
 
-if(localStorage.getItem("cookies")){
+function savePreferences(){
+  const analytics = document.getElementById("analyticsCookies").checked;
+
+  if(analytics){
+    localStorage.setItem("cookies","custom-analytics");
+    loadStatcounter();
+  } else {
+    localStorage.setItem("cookies","custom-none");
+  }
+
   document.getElementById("cookie-banner").style.display="none";
+  document.getElementById("cookie-config").style.display="none";
+}
+
+// INICIALITZACIÓ
+const consent = localStorage.getItem("cookies");
+
+if(consent){
+  document.getElementById("cookie-banner").style.display="none";
+
+  if(consent === "all" || consent === "custom-analytics"){
+    loadStatcounter();
+  }
 }
 </script>
 
