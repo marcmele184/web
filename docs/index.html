@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FoodLogistic S.A.</title>
+<title>FoodLogístic S.A.</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -68,7 +68,7 @@ nav a{
 /* HERO */
 .hero{
   height:90vh;
-  background:url("https://images.pexels.com/photos/27099094/pexels-photo-27099094.jpeg") center/cover no-repeat;
+  background:url("https://images.pexels.com/photos/6169668/pexels-photo-6169668.jpeg") center/cover no-repeat;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -86,11 +86,11 @@ nav a{
 
 .hero-content{
   position:relative;
-  max-width:700px;
+  max-width:750px;
 }
 
 .hero h1{
-  font-size:2.5rem;
+  font-size:2.7rem;
   margin-bottom:20px;
 }
 
@@ -109,7 +109,7 @@ section{
   font-size:2rem;
 }
 
-/* SERVICES */
+/* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -128,13 +128,15 @@ section{
   transform:translateY(-5px);
 }
 
+/* PROBLEMS */
+.problem{
+  border-left:5px solid red;
+}
+
 /* STATS */
 .stats{
   background:var(--dark);
   color:white;
-}
-
-.stats .grid{
   text-align:center;
 }
 
@@ -156,6 +158,8 @@ form{
   display:flex;
   flex-direction:column;
   gap:15px;
+  max-width:400px;
+  margin:auto;
 }
 
 input{
@@ -172,22 +176,18 @@ footer{
   text-align:center;
 }
 
-footer a{
-  color:#ccc;
-  text-decoration:none;
-}
 </style>
-
 </head>
 
 <body>
 
 <!-- NAV -->
 <nav>
-  <h1>FoodLogistic S.A.</h1>
+  <h1>FoodLogístic S.A.</h1>
   <div>
     <a href="#services">Serveis</a>
-    <a href="#about">Qui Som</a>
+    <a href="#problems">Problemes</a>
+    <a href="#solutions">Solucions IT</a>
     <a href="#contact">Contacte</a>
     <a class="btn" href="#contact">Pressupost</a>
   </div>
@@ -196,100 +196,122 @@ footer a{
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Excel·lència en Logística Alimentària B2B</h1>
-    <p>Solucions especialitzades de transport refrigerat, magatzem i distribució nacional adaptades a la indústria alimentària.</p>
-    <a href="#contact" class="btn">Sol·licita Pressupost</a>
+    <h1>Logística Alimentària amb Tecnologia Segura i Escalable</h1>
+    <p>Som especialistes en distribució alimentària. Ara fem el salt cap a una infraestructura IT moderna, segura i preparada per créixer amb el negoci.</p>
+    <a href="#contact" class="btn">Sol·licita Informació</a>
   </div>
 </section>
 
 <!-- SERVICES -->
 <section id="services">
-  <h2 class="section-title">Els Nostres Serveis Especialitzats</h2>
+  <h2 class="section-title">Serveis Logístics</h2>
   <div class="grid">
     <div class="card">
       <h3>Transport Refrigerat</h3>
-      <p>Flota multi-temperatura que garanteix que els vostres productes es mantinguin frescos.</p>
+      <p>Control de temperatura en tota la cadena de subministrament.</p>
     </div>
 
     <div class="card">
-      <h3>Magatzem</h3>
-      <p>Instal·lacions d'emmagatzematge en fred d'última generació.</p>
+      <h3>Magatzems</h3>
+      <p>Infraestructura preparada per productes frescos i congelats.</p>
     </div>
 
     <div class="card">
-      <h3>Preparació de Comandes</h3>
-      <p>Gestió d'inventari precisa i processos eficients.</p>
+      <h3>Distribució</h3>
+      <p>Lliuraments ràpids i fiables a nivell nacional.</p>
     </div>
 
-    <div class="card">
-      <h3>Distribució Nacional</h3>
-      <p>Lliuraments puntuals a tot el país.</p>
-    </div>
-  </div>
-</section>
-
-<!-- WHY -->
-<section>
-  <h2 class="section-title">Per Què Triar FoodLogistic</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Reliability</h3>
-      <p>99,8% de lliuraments puntuals.</p>
-    </div>
     <div class="card">
       <h3>Traçabilitat</h3>
-      <p>Monitoratge en temps real.</p>
-    </div>
-    <div class="card">
-      <h3>Seguretat Alimentària</h3>
-      <p>Protocols APPCC estrictes.</p>
+      <p>Seguiment en temps real dels enviaments.</p>
     </div>
   </div>
 </section>
 
-<!-- PROCESS -->
-<section>
-  <h2 class="section-title">El Nostre Procés</h2>
+<!-- PROBLEMS -->
+<section id="problems">
+  <h2 class="section-title">Reptes Actuals</h2>
   <div class="grid">
-    <div class="card"><h3>01 Reserva</h3></div>
-    <div class="card"><h3>02 Transport</h3></div>
-    <div class="card"><h3>03 Lliurament</h3></div>
+    <div class="card problem">
+      <h3>Sistemes Inestables</h3>
+      <p>Caigudes freqüents que afecten la producció i operativa.</p>
+    </div>
+
+    <div class="card problem">
+      <h3>Riscos de Seguretat</h3>
+      <p>Dades sensibles sense protecció adequada ni compliment RGPD.</p>
+    </div>
+
+    <div class="card problem">
+      <h3>Comunicació Deficient</h3>
+      <p>Eines antigues que dificulten el treball en equip.</p>
+    </div>
+
+    <div class="card problem">
+      <h3>Web Obsoleta</h3>
+      <p>Sense compliment legal ni imatge corporativa actual.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section id="solutions">
+  <h2 class="section-title">Solució Tecnològica Proposada</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Infraestructura</h3>
+      <p>Servidors redundants, alta disponibilitat i sistemes fiables.</p>
+    </div>
+
+    <div class="card">
+      <h3>Núvol</h3>
+      <p>Migració del correu i eines col·laboratives al cloud.</p>
+    </div>
+
+    <div class="card">
+      <h3>Seguretat</h3>
+      <p>Implementació de RGPD i formació dels treballadors.</p>
+    </div>
+
+    <div class="card">
+      <h3>Nova Web</h3>
+      <p>Landing moderna amb compliment LSSI i cookies.</p>
+    </div>
   </div>
 </section>
 
 <!-- STATS -->
 <section class="stats">
   <div class="grid">
-    <div><div class="stat">150+</div><p>Flota</p></div>
+    <div><div class="stat">150+</div><p>Vehicles</p></div>
     <div><div class="stat">25k+</div><p>Enviaments</p></div>
-    <div><div class="stat">12k m²</div><p>Magatzem</p></div>
     <div><div class="stat">99.8%</div><p>Puntualitat</p></div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta">
-  <h2>Preparat per Optimitzar la Teva Cadena?</h2>
-  <p>Uneix-te a centenars de socis B2B.</p>
-  <a href="#contact" class="btn">Sol·licita Pressupost</a>
+  <h2>Transforma la teva infraestructura IT</h2>
+  <p>Fem que la tecnologia deixi de ser un problema i passi a ser un avantatge.</p>
+  <a href="#contact" class="btn">Contacta Ara</a>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2 class="section-title">Contacta amb Nosaltres</h2>
+  <h2 class="section-title">Contacte</h2>
   <form>
-    <input type="text" placeholder="Nom Complet" required>
+    <input type="text" placeholder="Nom" required>
     <input type="email" placeholder="Email" required>
-    <button class="btn">Començar</button>
+    <button class="btn">Enviar</button>
   </form>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>© 2026 FoodLogistic S.A.</p>
+  <p>© 2026 FoodLogístic S.A.</p>
   <p>info@foodlogistic.sa | +34 912 345 678</p>
+  <p>Política de privacitat | Avís legal | Cookies</p>
 </footer>
-
 
 <!-- Default Statcounter code for FoodLogistic
 https://marcmele184.github.io/web/ -->
